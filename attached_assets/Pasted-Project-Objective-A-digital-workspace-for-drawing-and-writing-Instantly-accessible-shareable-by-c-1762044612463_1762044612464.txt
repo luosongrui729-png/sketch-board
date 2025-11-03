@@ -1,0 +1,173 @@
+Project Objective
+A digital workspace for drawing and writing. Instantly accessible, shareable by code, and usable without login.
+Designed for minimal friction and maximum interactivity.
+1. Interface Layout
+Top Toolbar
+• Pen Tool
+o Multiple brush sizes: Small (2px), Medium (5px), Large (10px), Extra Large (20px)
+o Opacity control (0-100%)
+o Pen types: Standard, Marker, Highlighter
+• Eraser Tool
+o Multiple sizes: Small, Medium, Large
+o Erases only drawn content, not background
+• Text Box Tool
+o Single font (system default or Arial/sans-serif)
+o Font sizes: 12px, 16px, 24px, 36px, 48px
+o Text alignment: Left, Center, Right
+• Shapes Tool (dropdown menu)
+o Rectangle
+o Circle/Ellipse
+o Triangle
+o Line
+o Arrow
+o Pentagon
+o Hexagon
+o Star
+o All shapes support: fill color, border color, border thickness
+• Color Picker
+o Standard color palette (20+ preset colors)
+o Custom color picker (hex/RGB)
+o Separate controls for: stroke color, fill color, text color
+• Zoom Controls
+o Zoom In (+)
+o Zoom Out (-)
+o Reset to 100%
+o Zoom percentage display
+o Zoom range: 10% to 400%
+• Insert Files
+o Supported formats: PNG, JPG, JPEG, GIF, SVG
+o Maximum file size: 10MB per image
+o Drag-and-drop support
+o Browse file system option
+• Undo/Redo Buttons
+o Unlimited undo/redo history (within session)
+o Keyboard shortcuts: Ctrl+Z (undo), Ctrl+Y (redo)
+• Download
+o Export formats: PNG, PDF
+o PNG: Full canvas or visible area option
+o PDF: Auto-fit to page size
+• Canvas Menu (dropdown)
+o List of all created canvases
+o Show canvas thumbnails
+o Rename canvas option
+o Delete canvas option
+o Create new canvas option
+Main Canvas
+• Infinite 2D space for all drawing/writing actions
+o Dynamically expands as users draw/move beyond current boundaries
+o No hard pixel limit (expands as needed)
+o Smooth panning: Click and drag to move around canvas
+o Grid background (optional toggle on/off)
+o White default background
+New Page Button
+• Creates a brand-new blank canvas
+• Each canvas gets a unique identifier
+• All canvases are saved and accessible via Canvas Menu
+2. Real-Time Collaboration
+Multi-User Editing
+• Simultaneous users: Support 2-10 users editing the same canvas in real-time
+• Real-time sync: All drawing, text, shape, and image actions sync instantly across all connected users
+• User presence indicators:
+o Show colored cursor labels for each user (e.g., "User 1", "User 2")
+o Display what tool each user is currently using
+o Show user count in toolbar
+• Conflict resolution:
+o Last action wins for overlapping edits
+o Each action has timestamp to determine order
+• Connection status:
+o Visual indicator showing connection status (connected/disconnected)
+o Auto-reconnect on connection loss
+o Queue actions during disconnection and sync when reconnected
+Code-Based Sharing
+• Each canvas generates a unique 6-8 character alphanumeric code
+• Users can share this code to invite others
+• Code entry interface: Simple input field on homepage
+• Valid code = instant access to shared canvas
+• Codes are persistent (don't expire)
+3. Canvas & Performance Specifications
+Canvas Details
+• Size: Truly infinite — dynamically expands as users work
+• Performance target: Smooth performance with up to 1,000 objects on canvas
+• Rendering: Only render visible viewport + small buffer area
+• Optimization:
+o Lazy loading for images
+o Object culling (don't render off-screen elements)
+o Debounced sync for drawing actions (batch updates every 50-100ms)
+Image Handling
+• Maximum file size: 10MB per image
+• Supported formats: PNG, JPG, JPEG, GIF, SVG
+• Image manipulation:
+o Resize by dragging corners
+o Maintain aspect ratio (with Shift key override)
+o Rotate in 90° increments
+o Delete option
+o Layer ordering (bring to front/send to back)
+4. Save/Export Functionality
+Auto-Save
+• All changes automatically saved to local database
+• Save frequency: Every 5 seconds or after significant action
+• No manual "Save" button needed
+• Session recovery if browser/app crashes
+Export Options
+• PNG Export:
+o Full canvas export
+o Visible area only export
+o Custom resolution options (1x, 2x, 4x for high-res)
+o Transparent or white background
+• PDF Export:
+o Auto-fit content to page
+o Multiple pages if canvas is very large
+o Maintain aspect ratios and quality
+Canvas Management
+• All canvases persist in database
+• Access via Canvas Menu dropdown
+• Each canvas shows:
+o Thumbnail preview
+o Creation date
+o Last modified date
+o Canvas name (editable)
+6. Additional Features & Polish
+Keyboard Shortcuts
+• Ctrl+Z: Undo
+• Ctrl+Y or Ctrl+Shift+Z: Redo
+• Ctrl+C: Copy selected object
+• Ctrl+V: Paste copied object
+• Delete or Backspace: Delete selected object
+• Ctrl+A: Select all objects
+• Space + Drag: Pan canvas (hand tool)
+• Ctrl + Scroll: Zoom in/out
+Selection Tool
+• Click to select individual objects
+• Drag to create selection box for multiple objects
+• Selected objects show blue border/handles
+• Move selected objects by dragging
+• Delete, duplicate, or modify selected objects
+Context Menu (Right-Click)
+• Copy
+• Paste
+• Delete
+• Duplicate
+• Bring to Front
+• Send to Back
+• Lock/Unlock object
+Error Handling
+• Graceful handling of large images
+• Warning if image exceeds 10MB
+• Connection loss notifications
+• Invalid canvas code error messages
+7. Development Requirements
+Deliverables
+• Complete source code (well-commented and organized)
+• README with setup instructions
+• List of dependencies and how to install
+• Simple start script
+• Basic troubleshooting guide
+Code Quality
+• Clean, modular code structure
+• Commented functions and complex logic
+• Consistent naming conventions
+• Prepared for future online deployment:
+o API endpoints clearly defined
+o Database queries abstracted
+o Configuration via environment variables
+o Authentication hooks in place (for future implementation)

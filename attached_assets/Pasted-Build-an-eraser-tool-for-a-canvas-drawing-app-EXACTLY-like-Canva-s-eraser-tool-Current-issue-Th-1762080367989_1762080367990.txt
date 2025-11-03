@@ -1,0 +1,31 @@
+Build an eraser tool for a canvas drawing app EXACTLY like Canva's eraser tool.
+
+Current issue: There's only one eraser icon. When clicked, it erases the entire area/object under the click (wrong).
+
+Fix it to work like Canva:
+1. **Three size buttons**: Small (5px radius), Medium (15px radius), Large (30px radius). 
+   - Buttons: [Small] [Medium] [Large] — highlight the active size.
+2. **Activation**: User clicks Eraser tool button (eraser icon) to activate. Then selects size.
+3. **Behavior** (identical to Canva):
+   - Cursor changes to a circle outline showing the selected size (visual preview).
+   - User DRAGS over the canvas — eraser follows the mouse/touch path smoothly in real-time.
+   - Erases ONLY drawn strokes/lines/shapes/paths (NOT background image or canvas fill).
+   - Partial erasing: Erases proportionally based on drag path and size (e.g., small eraser for fine details, large for quick wipes).
+   - Smooth, pressure-insensitive (constant size).
+4. **Key technical requirements**:
+   - Use HTML5 Canvas 2D context.
+   - Separate layers: Background image on one layer (never touched). Drawings on a second canvas/layer.
+   - For erasing: Set context.globalCompositeOperation = 'destination-out'.
+   - Draw eraser as a transparent circle path during drag to erase drawn pixels only.
+   - On mouse down + drag + up: Track path, erase along it.
+   - Touch support for mobile (touchstart, touchmove, touchend).
+5. **UI/UX like Canva**:
+   - Eraser tool button in toolbar.
+   - Size buttons appear/dropdown when eraser active.
+   - Cursor: 'none' + custom circle via CSS or canvas overlay.
+   - Deactivate: Click another tool or eraser button again.
+6. **Preserve everything else**: Integrate into existing drawing app (pencil/brush tools, background upload, etc.). Don't break other features.
+
+Provide COMPLETE working code: Full HTML page with CSS + JS. Include commented sections for easy integration. Test on desktop + mobile.
+
+Make it pixel-perfect like Canva's eraser — smooth drag erase, size preview, drawn-only removal.

@@ -1,0 +1,103 @@
+Real-Time Collaborative Canvas Web App
+
+Goal:
+Build a real-time collaborative whiteboard/canvas web app that allows 2–10 users to draw, write, or edit on the same canvas simultaneously with full live synchronization and user tracking.
+
+🔐 User Identity & Device Recognition
+
+When a user first visits the app:
+
+Prompt them to enter a name (e.g., via modal input field).
+
+Automatically generate a unique user code based on device fingerprint (using libraries like FingerprintJS or custom hash).
+
+Store {name, code, fingerprint} locally (in localStorage or IndexedDB).
+
+On subsequent visits:
+
+The app recognizes the user by fingerprint → automatically restores their name and code.
+
+No need to ask again.
+
+🖥️ Canvas & Collaboration
+
+Users can create a new canvas or join an existing one (via code or shared link).
+
+Each canvas supports up to 10 users editing in real time.
+
+Features:
+
+Real-time sync of:
+
+Drawing (freehand)
+
+Text
+
+Shapes
+
+Images
+
+All actions instantly replicate across all connected users.
+
+Implementation Options:
+
+Use WebSockets (e.g., Socket.io, Supabase Realtime, or Firebase Realtime Database) for syncing.
+
+Canvas rendering via HTML5 Canvas or Fabric.js for object manipulation.
+
+👥 User Presence Indicators
+
+Each connected user is assigned:
+
+A unique color
+
+Their name + code (shown in UI)
+
+Show live cursors for each user:
+
+Display colored cursor with their name above it (e.g., "Sarah – Pen").
+
+Update in real time as they move.
+
+🧰 Toolbar Features
+
+Toolbar contains:
+
+Tool options (pen, text, shape, image, eraser, select, etc.)
+
+Current user’s name and color
+
+"Active Users" button → when clicked:
+
+Displays list of all connected users:
+
+Name
+
+Code
+
+Currently selected tool
+
+Color indicator
+
+Show total user count in toolbar (e.g., “👥 5 users online”).
+
+🖊️ Attribution & Cursor Labels
+
+Every drawing, text, or edit on the canvas:
+
+Is tagged with the user who performed it.
+
+When hovering over an object or area, show a tooltip:
+
+“Edited by Sarah”
+
+“Written by Alex”
+
+Optionally store object metadata like:
+
+{
+  "objectId": "shape_123",
+  "userName": "Sarah",
+  "userCode": "A94F2",
+  "timestamp": 1730498412000
+}

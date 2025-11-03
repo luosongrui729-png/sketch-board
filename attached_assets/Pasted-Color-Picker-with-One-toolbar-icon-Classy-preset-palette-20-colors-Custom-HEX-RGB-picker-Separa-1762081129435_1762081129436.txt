@@ -1,0 +1,111 @@
+Color Picker with:
+
+One toolbar icon
+Classy preset palette (20+ colors)
+Custom HEX/RGB picker
+Separate controls for Stroke, Fill, and Text Color
+Applies to all drawings, shapes, text, lines on canvas
+
+
+FINAL PROMPT for Trae AI (Copy & Paste):
+textBUILD A PROFESSIONAL COLOR PICKER EXACTLY LIKE CANVA — UNIFIED, CLASSY, AND FULLY FUNCTIONAL
+
+**CURRENT ISSUE:** No proper color picker or separate stroke/fill/text controls.
+
+**REQUIRED: One Color Picker Tool in Toolbar — Controls Stroke, Fill, and Text Color Separately**
+
+---
+
+### 1. TOOLBAR (1 ICON ONLY)
+- Single icon in toolbar: [🎨] or [■ Color]
+- On click → Opens **floating color panel** (like Canva)
+
+---
+
+### 2. COLOR PANEL DESIGN (Classy & Professional — Match Canva)
+- **Preset Palette (20+ colors):**  
+  5 rows × 5 columns grid  
+  Colors:  
+  `#000000`, `#FFFFFF`, `#FF0000`, `#FF6900`, `#FFB800`, `#FFD700`,  
+  `#00FF00`, `#00BFFF`, `#007BFF`, `#5856D6`, `#AF52DE`,  
+  `#FF2D92`, `#FF4081`, `#8B4513`, `#A0522D`, `#808080`,  
+  `#C0C0C0`, `#D3D3D3`, `#F5F5F5`, `#2ECC71`, `#E74C3C`  
+  → Round or square swatches with subtle border & hover glow
+
+- **Custom Color Input (Below Palette):**
+  - HEX input: `#______` (live update)
+  - RGB sliders: R: [0-255] | G: [0-255] | B: [0-255]
+  - Live preview square (current color)
+  - "Add to Custom" button → saves to row below
+
+- **Custom Saved Colors Row:**  
+  1×6 grid below — user-saved colors persist
+
+---
+
+### 3. COLOR TYPE TABS (Top of Panel — Like Canva)
+[ Stroke ]  [ Fill ]  [ Text ]
+text- Each tab shows **currently selected color** for that type
+- Clicking a color in palette **applies to active tab only**
+- Default: Stroke = #000000, Fill = transparent, Text = #000000
+
+---
+
+### 4. FUNCTIONALITY (Applies to ALL Canvas Elements)
+- **Stroke Color:** Affects pencil, pen, shapes outline, text outline
+- **Fill Color:** Affects shape fill, text background (if any)
+- **Text Color:** Affects all text
+- **When user draws/writes/shapes after picking color → uses correct stroke/fill/text**
+
+---
+
+### 5. TECHNICAL REQUIREMENTS
+- HTML5 Canvas + JavaScript
+- Store: `currentStrokeColor`, `currentFillColor`, `currentTextColor`
+- Update canvas context on tool change:
+  ```js
+  ctx.strokeStyle = currentStrokeColor;
+  ctx.fillStyle = currentFillColor;
+
+For text: apply currentTextColor on draw
+Panel closes on outside click or Esc
+Mobile-friendly (tap to open, swipe sliders)
+
+
+6. UI/UX (Canva-Exact)
+
+Panel: 300px wide, drop shadow, rounded corners
+Active tab: bold + bottom border
+Selected color: white checkmark or thick border
+Hover on swatch: scale 1.1 + shadow
+HEX input: validates and auto-formats
+RGB sliders: smooth, real-time preview
+
+
+7. CODE OUTPUT
+
+Full HTML, CSS, JS
+Modular: openColorPicker(), setStrokeColor(hex), etc.
+Works with existing drawing tools
+No conflicts with eraser or other tools
+
+DELIVER: Complete, beautiful, Canva-grade color picker with separate Stroke | Fill | Text controls.
+text---
+
+### **VISUAL LAYOUT (What Trae AI Will Build):**
+Toolbar: [✏️] [🔷] [T] [🧽] [🎨 ▼]
+↓ (click)
+┌──────────────────────────────────┐
+│  [ Stroke ▼]  [ Fill ]  [ Text ]    │
+│  ■ ■ ■ ■ ■    ← Preset Palette      │
+│  ■ ■ ■ ■ ■                          │
+│  ■ ■ ■ ■ ■                          │
+│  ■ ■ ■ ■ ■                          │
+│  ■ ■ ■ ■ ■                          │
+│                                     │
+│  #FF0000  [████████]                │ ← Live preview
+│  R: 255  G: 0    B: 0               │
+│  [Add to Custom]                    │
+│                                     │
+│  □ □ □ □ □ □   ← Saved Customs       │
+└──────────────────────────────────┘

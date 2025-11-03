@@ -1,0 +1,25 @@
+In the context of this drawing application, "pan" refers to moving or dragging the view of the canvas without changing the actual content. It's a common term in graphics and mapping applications.
+
+## 🖱️ What Panning Does:
+- Moves the viewport : You can drag the canvas around to see different parts of your drawing
+- Doesn't modify content : The actual drawings, text, and shapes stay in their original positions
+- Changes what you see : Like moving a camera or window over a larger scene
+## 🎯 In This Application:
+Looking at the code, I can see that panning is controlled by:
+
+- canvasState.panX and canvasState.panY - track the current pan offset
+- Mouse drag events that update these pan values
+- The canvas view is then translated based on these pan coordinates
+## 🔧 How It Works:
+1. Click and drag on the canvas (when not using a drawing tool)
+2. The entire view shifts in the direction you drag
+3. This lets you navigate around a large canvas that might be bigger than your screen
+4. Similar to how you can pan around in Google Maps or zoom/pan in image viewers
+Think of it like moving a magnifying glass over a large piece of paper - you're not changing what's written on the paper, just changing which part of it you can see through the magnifying glass!...... Smooth panning: Click and drag to move around canvas…build this functionality
+Eraser Tool o Multiple sizes: Small, Medium, Large o Erases only drawn content, not background……the eraser you built erase the whole line in one go , change its functionality in such a way that it only removes whatever we want to remove either whole or any small exact part like we erase manually on paper with eraser
+Text Box Tool --- Text alignment: Left, Center, Right build this function 
+Also there is error occurring that whenever chose text box , I right click it automatically generate text box resolve it , it must have control , only built text box when I want 
+Color Picker o Standard color palette (20+ preset colors) o Custom color picker (hex/RGB) o Separate controls for: stroke color, fill color, text color…you have not yet developed this option ..built it too
+Ctrl+Y (redo)..this is not working make it work 
+Canvas Menu (dropdown) o List of all created canvases o Show canvas thumbnails o Rename canvas option o Delete canvas option o Create new canvas option…build these functions too
+New Page Button • Creates a brand-new blank canvas • Each canvas gets a unique identifier • All canvases are saved and accessible via Canvas Menu
